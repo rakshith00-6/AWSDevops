@@ -18,7 +18,7 @@ function App() {
       <main>
         <section className="hero" id="home">
           <div className="hero-content">
-            <p className="tag">AWS + React + DevOps</p>
+            <p className="tag">AWS + React + DevOps 🚀 - Version 2</p>
 
             <h1>
               Learn CI/CD by
