@@ -31,8 +31,12 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          timeout: 60s
+          command_timeout: 5m
           script: |
+            set -e
             docker pull ${{ secrets.DOCKER_USERNAME }}/reactapp:latest
             docker stop reactapp || true
             docker rm reactapp || true
             docker run -d -p 80:80 --name reactapp ${{ secrets.DOCKER_USERNAME }}/reactapp:latest
+            docker ps
